@@ -20,5 +20,10 @@
 }
 
 .smallPoster {
+    cursor: pointer;
     max-height: 100px;
+}
+
+.smallPoster:hover {
+    transform: scale(1.1);
 }
