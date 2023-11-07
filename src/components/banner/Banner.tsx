@@ -23,6 +23,9 @@ const Banner = () => {
       });
   }, []);
 
+  const maxLength = 400;
+  const overview = data && data.overview;
+
   return (
     <div
       className="banner"
@@ -36,7 +39,11 @@ const Banner = () => {
           <button className="button">Play</button>
           <button className="button">My list</button>
         </div>
-        {data && <h1 className="description">{data.overview}</h1>}
+        <h1 className="description">
+          {overview && overview.length > maxLength
+            ? `${overview.slice(0, maxLength)}...`
+            : overview}
+        </h1>
       </div>
       <div className="fade_bottom"></div>
     </div>
