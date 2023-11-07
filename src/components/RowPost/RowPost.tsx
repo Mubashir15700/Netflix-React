@@ -10,13 +10,12 @@ interface Props {
   sizeClass: string;
 }
 
-const RowPost: React.FC<Props> = ({ url, title, sizeClass }) => {
-  interface Movie {
-    backdrop_path: string;
-    id: string;
-    // Add other properties here
-  }
+interface Movie {
+  backdrop_path: string;
+  id: string;
+}
 
+const RowPost: React.FC<Props> = ({ url, title, sizeClass }) => {
   const [data, setData] = useState<Movie[]>([]);
   const [videoKey, setVideoKey] = useState("");
 
@@ -67,12 +66,7 @@ const RowPost: React.FC<Props> = ({ url, title, sizeClass }) => {
           />
         ))}
       </div>
-      {videoKey && (
-        <YouTube
-          videoId={videoKey}
-          opts={opts}
-        />
-      )}
+      {videoKey && <YouTube videoId={videoKey} opts={opts} />}
     </div>
   );
 };

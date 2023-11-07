@@ -1,8 +1,8 @@
-import './App.css';
-import RowPost from './components/RowPost/RowPost';
-import Banner from './components/banner/Banner';
 import Navbar from './components/navbar/Navbar';
-import * as urls from './urls'; // Specify the file extension
+import Banner from './components/banner/Banner';
+import RowPost from './components/RowPost/RowPost';
+import * as urls from './urls'; // to fix
+import './App.css';
 
 function App() {
 
