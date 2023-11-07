@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
-import instance from "../../axios-instance";
+import axios from "../../axios-instance";
 import { apiKey, imageUrl } from "../../constants/constants";
 import "./RowPost.css";
 
@@ -21,7 +21,7 @@ const RowPost: React.FC<Props> = ({ url, title, sizeClass }) => {
   const [videoKey, setVideoKey] = useState("");
 
   useEffect(() => {
-    instance
+    axios
       .get(url)
       .then((response: any) => {
         console.log(response);
@@ -41,7 +41,7 @@ const RowPost: React.FC<Props> = ({ url, title, sizeClass }) => {
   };
 
   const MovieClick = (id: string) => {
-    instance
+    axios
       .get(`movie/${id}/videos?api_key=${apiKey}&language=en-US`)
       .then((response: any) => {
         console.log(response.data);

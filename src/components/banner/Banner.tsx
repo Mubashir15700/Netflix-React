@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import instance from "../../axios-instance";
+import axios from "../../axios-instance";
 import { apiKey, imageUrl } from "../../constants/constants"; // to fix
 import "./Banner.css";
 
@@ -11,7 +11,7 @@ const Banner = () => {
   });
 
   useEffect(() => {
-    instance
+    axios
       .get(`trending/all/week?api_key=${apiKey}&language=en-US`)
       .then((response: any) => {
         const randomNumber = Math.floor(Math.random() * 20);
